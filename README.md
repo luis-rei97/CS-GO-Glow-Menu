@@ -30,7 +30,7 @@ Requeriments:
 
 FAQ:
 
-<b> Q: This plugin would lag my servers massively? </b>
+<p><b> Q: This plugin would lag my servers massively? </b></p>
 R: That depends where your server is hosting from, but if it lags a lot, I advice you to setup the <b>sm_glowcolor_default</b> CVAR to "", just to make sure.
 Other Option is to set the <b>sm_glowcolor_flag</b> to restrict for a certain ammount of players.
 
