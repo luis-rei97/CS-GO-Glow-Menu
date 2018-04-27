@@ -2,6 +2,7 @@
 #include <sdktools>
 #include <sdkhooks>
 #include <clientprefs>
+#include <colorvariables>
 
 #pragma newdecls required
 #pragma semicolon 1
@@ -218,7 +219,7 @@ public Action Command_GlowColor(int client, int args)
 	
 		if(!CheckCommandAccess(client, "", flag, true))
 		{
-			PrintToChat(client, "%s %T", PREFIX, "NoPermission");
+			CPrintToChat(client, "%s %T", PREFIX, "NoPermission");
 			return Plugin_Continue;
 		}
 	}
@@ -228,7 +229,7 @@ public Action Command_GlowColor(int client, int args)
 
 	if (!kv.GotoFirstSubKey())
 	{
-		PrintToChat(client, "%s %T", PREFIX, "CFGFileError");
+		CPrintToChat(client, "%s %T", PREFIX, "CFGFileError");
 		return Plugin_Continue;
 	}
 
@@ -321,7 +322,7 @@ public int GlowMenu_Handler(Menu menu, MenuAction action, int client, int choice
 		RemoveSkin(client);
 		CreateGlow(client);
 		
-		PrintToChat(client, "%s %T", PREFIX, "ChangedGlowColor", name);
+		CPrintToChat(client, "%s %T", PREFIX, "ChangedGlowColor", name);
 		Command_GlowColor(client, choice);
 	}
 	else if (action == MenuAction_End)
