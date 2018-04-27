@@ -28,6 +28,16 @@ Requeriments:
 <li>(To Compile): ColorVariables - https://github.com/PremyslTalich/ColorVariables</li>
 </ul>
 
+FAQ:
+
+<b> Q: This plugin would lag my servers massively? </b>
+R: That depends where your server is hosting from, but if it lags a lot, I advice you to setup the <b>sm_glowcolor_default</b> CVAR to "", just to make sure.
+Other Option is to set the <b>sm_glowcolor_flag</b> to restrict for a certain ammount of players.
+
+Screenshots:
+
+![Alt text](https://steamuserimages-a.akamaihd.net/ugc/307738934717361893/057A983F0BF99D22CDD1F231A8A775B612A2D0FA/?raw=true "Screenshot 1")
+
 I hope you enjoyed!
 
 My Steam Profile if you have any questions -> http://steamcommunity.com/id/HallucinogenicTroll/
