@@ -13,7 +13,7 @@ The glow can be restricted to a certain flag, also has different styles;
 </ul>
 
 
-Installation:
+<h2>Installation:</h2>
 <ol>
 <li>Drag the file named <i>colors.cfg</i> to <b>addons/sourcemod/configs/glow_colors</b>.</li>
 <li>Drag the file named <i>csgo_glow_menu.smx</i> to <b>addons/sourcemod/plugins</b>.</li>
@@ -22,19 +22,19 @@ Installation:
 <li>Change the ConVars as you wish in the file <i>csgo_glowcolor_menu.cfg</i> located in <b>cfg/sourcemod</b></li>
 </ol>
 
-Requeriments:
+<h2>Requeriments:</h2>
 <ul>
 <li>(To Show the Glow to everyone): Set your server with the <b>sv_force_transmit_players</b> ConVar to <b>1</b></li>
 <li>(To Compile): ColorVariables - https://github.com/PremyslTalich/ColorVariables</li>
 </ul>
 
-FAQ:
+<h2>FAQ:</h2>
 
 <p><b> Q: This plugin would lag my servers massively? </b></p>
 R: That depends where your server is hosting from, but if it lags a lot, I advice you to setup the <b>sm_glowcolor_default</b> CVAR to "", just to make sure.
 Other Option is to set the <b>sm_glowcolor_flag</b> to restrict for a certain ammount of players.
 
-Style's Screenshots (More to be added):
+<h2>Style's Screenshots (More to be added):</h2>
 
 ![Alt text](https://steamuserimages-a.akamaihd.net/ugc/307738934717361893/057A983F0BF99D22CDD1F231A8A775B612A2D0FA/?raw=true "Screenshot 1")
 ![Alt text](https://steamuserimages-a.akamaihd.net/ugc/307738934717359810/AAFDFAD4B2E4E308F2CBDCEB77A5B60A7C322365/?raw=true "Screenshot 2")
