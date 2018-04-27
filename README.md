@@ -34,9 +34,11 @@ FAQ:
 R: That depends where your server is hosting from, but if it lags a lot, I advice you to setup the <b>sm_glowcolor_default</b> CVAR to "", just to make sure.
 Other Option is to set the <b>sm_glowcolor_flag</b> to restrict for a certain ammount of players.
 
-Screenshots:
+Style's Screenshots (More to be added):
 
 ![Alt text](https://steamuserimages-a.akamaihd.net/ugc/307738934717361893/057A983F0BF99D22CDD1F231A8A775B612A2D0FA/?raw=true "Screenshot 1")
+![Alt text](https://steamuserimages-a.akamaihd.net/ugc/307738934717359810/AAFDFAD4B2E4E308F2CBDCEB77A5B60A7C322365/?raw=true "Screenshot 2")
+![Alt text](https://steamuserimages-a.akamaihd.net/ugc/307738934717359336/D8438AF5A080FB28B167DE6391A2F91547241FE1/?raw=true "Screenshot 3")
 
 I hope you enjoyed!
 
