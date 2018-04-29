@@ -47,4 +47,3 @@ My Steam Profile if you have any questions -> http://steamcommunity.com/id/Hallu
 
 My Website -> http://htconfigs.me/
 
-Alliedmodders Thread, related with this plugin -> https://forums.alliedmods.net/showthread.php?t=295236
