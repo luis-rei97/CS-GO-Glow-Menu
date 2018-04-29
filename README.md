@@ -18,11 +18,12 @@ The glow can be restricted to a certain flag, also has different styles;
 <li>Drag the file named <i>colors.cfg</i> to <b>addons/sourcemod/configs/glow_colors</b>.</li>
 <li>Drag the file named <i>csgo_glow_menu.smx</i> to <b>addons/sourcemod/plugins</b>.</li>
 <li>Drag the file named <i>csgo_glowcolor_menu.phrases.txt</i> to <b>addons/sourcemod/translations</b>.</li>
+<li>Drag the file named <i>csgo_glowcolor_menu.cfg</i> to <b>cfg/sourcemod</b>.</li>
 <li>Load the plugin or just wait for the next map.</li>
 <li>Change the ConVars as you wish in the file <i>csgo_glowcolor_menu.cfg</i> located in <b>cfg/sourcemod</b></li>
 </ol>
 
-<h2>Requeriments:</h2>
+<h2>Requirements:</h2>
 <ul>
 <li>(To Show the Glow to everyone): Set your server with the <b>sv_force_transmit_players</b> ConVar to <b>1</b></li>
 <li>(To Compile): ColorVariables - https://github.com/PremyslTalich/ColorVariables</li>
