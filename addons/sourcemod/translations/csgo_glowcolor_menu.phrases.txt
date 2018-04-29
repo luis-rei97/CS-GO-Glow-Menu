@@ -3,20 +3,17 @@
 	"NoPermission"
 	{
 		"en"			"You don't have any permission to use this command!"
-		"es"			"No tienes permiso para utilizar este comando!"
 		"pt_p"			"Lamento, mas não tens permissões para usar este comando!"
 	}
 	"CFGFileError"
 	{
 		"en"			"An error has ocurred!"
-		"es"			"Ha ocurrido un error!"
 		"pt_p"			"Ocorreu um erro!"
 	}
 	"ChangedGlowColor"
 	{
 		"#format"		"{1:s}"
 		"en"			"You have changed your {purple}Glow Color{default} to: {blue}{1}{default}!"
-		"es"			"Has cambiado {purple}el color del Glow{default} a: {blue}{1}{default}!"
 		"pt_p"			"Mudaste a {purple}Cor da tua Aura{default} para: {blue}{1}{default}!"
 	}
 }

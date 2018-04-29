@@ -176,6 +176,16 @@ public void Event_PlayerSpawn(Event event, const char[] name, bool dontBroadcast
 		return;
 	}
 	
+	if(strlen(g_GlowColor_Flag) > 0)
+	{
+		int flag = ReadFlagString(g_GlowColor_Flag);
+		if(!CheckCommandAccess(client, "", flag, true))
+		{
+			return;
+		}
+	}
+	
+	
 	CreateTimer(0.0, Timer_CreateGlow, client);
 }
 
@@ -219,7 +229,7 @@ public Action Command_GlowColor(int client, int args)
 	
 		if(!CheckCommandAccess(client, "", flag, true))
 		{
-			CPrintToChat(client, "%s %T", PREFIX, "NoPermission");
+			CPrintToChat(client, "%s %t", PREFIX, "NoPermission");
 			return Plugin_Continue;
 		}
 	}
@@ -229,7 +239,7 @@ public Action Command_GlowColor(int client, int args)
 
 	if (!kv.GotoFirstSubKey())
 	{
-		CPrintToChat(client, "%s %T", PREFIX, "CFGFileError");
+		CPrintToChat(client, "%s %t", PREFIX, "CFGFileError");
 		return Plugin_Continue;
 	}
 
@@ -322,7 +332,7 @@ public int GlowMenu_Handler(Menu menu, MenuAction action, int client, int choice
 		RemoveSkin(client);
 		CreateGlow(client);
 		
-		CPrintToChat(client, "%s %T", PREFIX, "ChangedGlowColor", name);
+		CPrintToChat(client, "%s %t", PREFIX, "ChangedGlowColor", name);
 		Command_GlowColor(client, choice);
 	}
 	else if (action == MenuAction_End)
