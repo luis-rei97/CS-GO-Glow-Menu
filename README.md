@@ -4,7 +4,7 @@ A menu which players can enable Glow to themselves.
 The colors that appear on the menu can be changed in a config file;
 The glow can be restricted to a certain flag, also has different styles;
 
-<h2>ConVars</h2>:
+<h2>ConVars:</h2>
 
 <ul>
 <li><b>sm_glowcolor_style</b> (<b>1</b> by Default) - It changes the Glow Style to the players (Min 0, Max 3). WARNING: If you set the style to 0, <b>all players can see the glow through Walls</b>;</li>
