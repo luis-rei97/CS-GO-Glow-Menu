@@ -5,6 +5,21 @@
 		"en"			"You don't have any permission to use this command!"
 		"pt_p"			"Lamento, mas não tens permissões para usar este comando!"
 	}
+	"DisabledGlow"
+	{
+		"en"			"You have disabled your Glow!"
+		"pt_p"			"Desativaste a tua Aura!"
+	}
+	"MenuTitle"
+	{
+		"en"			"Glow Color Menu"
+		"pt_p"			"Menu de Cor da Aura"
+	}
+	"MenuNone"
+	{
+		"en"			"None"
+		"pt_p"			"Nenhum"
+	}
 	"CFGFileError"
 	{
 		"en"			"An error has ocurred!"
