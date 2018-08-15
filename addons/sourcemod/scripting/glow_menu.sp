@@ -16,9 +16,11 @@ ConVar sv_force_transmit_players;
 ConVar g_CVAR_GlowColor_Style;
 ConVar g_CVAR_GlowColor_Flag;
 ConVar g_CVAR_GlowColor_Prefix;
+ConVar g_CVAR_GlowColor_Random;
 
 int g_GlowColor_Style;
 int g_GlowColor_Flag;
+int g_GlowColor_Random;
 
 char g_GlowColor_Prefix[40];
 
@@ -55,6 +57,7 @@ public void OnPluginStart()
 	sv_force_transmit_players 	= 	FindConVar("sv_force_transmit_players");
 	
 	g_CVAR_GlowColor_Style = CreateConVar("sm_glowmenu_style", "1", "Type of Style that you want to the glow (0 gives WALLHACKS to everyone)", _, true, 0.0, true, 3.0);
+	g_CVAR_GlowColor_Random = CreateConVar("sm_glowmenu_random", "0", "It lets players have a choice to select if the glow should be random every X seconds", _, true, 0.0, true, 1.0);
 	g_CVAR_GlowColor_Flag = CreateConVar("sm_glowmenu_flag", "", "Only gives the glow to players with a certain flag");
 	g_CVAR_GlowColor_Prefix = CreateConVar("sm_glowmenu_prefix", "[Glow Menu]", "Chat's Prefix");
 	
@@ -75,6 +78,8 @@ public void OnConfigsExecuted()
 	g_GlowColor.Clear();
 	g_GlowColorName.Clear();
 	force_transmit = sv_force_transmit_players.IntValue;
+	
+	g_GlowColor_Random = g_CVAR_GlowColor_Random.IntValue;
 	
 	g_GlowColor_Style = g_CVAR_GlowColor_Style.IntValue;
 	
@@ -197,6 +202,11 @@ public void SQL_LoadPlayerCallback(Handle DB, Handle results, const char[] error
 	if(SQL_HasResultSet(results) && SQL_FetchRow(results))
 	{
 		GlowIndex[client] = SQL_FetchInt(results, 1);
+		
+		if(!g_GlowColor_Random && GlowIndex[client] == -2)
+		{
+			GlowIndex[client] = -1;
+		}
 	}
 	else
 	{
@@ -256,6 +266,7 @@ public Action Command_GlowMenu(int client, int args)
 	menu.SetTitle(buffer);
 	Format(buffer, sizeof(buffer), "%t", "MenuNone");
 	menu.AddItem("-1", buffer);
+	menu.AddItem("-2", "Random");
 	for (int i = 0; i < g_GlowColorName.Length; i++)
 	{
 		g_GlowColorName.GetString(i, buffer, sizeof(buffer));
@@ -269,10 +280,18 @@ public int Menu_Glow_Handler(Menu menu, MenuAction action, int client, int choic
 {
 	if(action == MenuAction_Select)
 	{
-		GlowIndex[client] = choice - 1;
+		GlowIndex[client] = choice - 2;
 		if(choice == 0)
 		{
+			// Just to be sure it's -1;
+			GlowIndex[client] = -1;
 			CPrintToChat(client, "%s %t", g_GlowColor_Prefix, "DisabledGlow");
+		}
+		else if(choice == 1)
+		{
+			// Just to be sure it's -2;
+			GlowIndex[client] = -2;
+			CPrintToChat(client, "%s Now it will change colors randomly!", g_GlowColor_Prefix);
 		}
 		else
 		{	
@@ -299,6 +318,25 @@ public Action Event_PlayerSpawn(Event event, const char[] name, bool dontBroadca
 	
 	RemoveSkin(client);
 	CreateGlow(client);
+	
+	if(g_GlowColor_Random && GlowIndex[client] == -2)
+	{
+		CreateTimer(2.0, Timer_RandomGlow, GetClientSerial(client), TIMER_REPEAT);
+	}
+}
+
+public Action Timer_RandomGlow(Handle timer, any data)
+{
+	int client = GetClientFromSerial(data);
+	
+	if(!IsValidClient(client) || !IsPlayerAlive(client) || !IsValidEntity(playerModels[client]) || GlowIndex[client] != -2)
+	{
+		return Plugin_Stop;
+	}
+	
+	SetupGlow(playerModelsIndex[client], client);
+	
+	return Plugin_Continue;
 }
 
 public Action Event_PlayerDeath(Event event, const char[] name, bool dontBroadcast)
@@ -353,10 +391,20 @@ public void SetupGlow(int entity, int client)
 	SetEntPropFloat(entity, Prop_Send, "m_flGlowMaxDist", 10000.0);
 
 	int colors[3];
-	g_GlowColor.GetArray(GlowIndex[client], colors);
-
-	for(int i=0;i<3;i++)
+	
+	if(GlowIndex[client] == -2)
 	{
+		colors[0] = GetRandomInt(0, 255);
+		colors[1] = GetRandomInt(0, 255);
+		colors[2] = GetRandomInt(0, 255);
+	}
+	else
+	{
+		g_GlowColor.GetArray(GlowIndex[client], colors);
+	}
+	
+	for(int i=0;i<3;i++)
+	{		
 		SetEntData(entity, offset + i, colors[i], _, true);
 	}
 }
