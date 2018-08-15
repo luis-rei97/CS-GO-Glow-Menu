@@ -25,7 +25,6 @@ The glow can be restricted to a certain flag, also has different styles;
 ```
 
 <h2>Installation:</h2>
-<<<<<<< HEAD
 
 1. Setup your MySQL database first (read above)
 2. Drag the file named <i>glow_menu.ini</i> to <b>addons/sourcemod/configs</b>.
@@ -54,7 +53,6 @@ The glow can be restricted to a certain flag, also has different styles;
 <li>(To Show the Glow to everyone): Set your server with the <b>sv_force_transmit_players</b> ConVar to <b>1</b></li>
 <li>(To Compile): ColorVariables - https://github.com/PremyslTalich/ColorVariables</li>
 </ul>
->>>>>>> 04521ecda64385369e2c6c55fe6aee2dc68e71af
 
 <h2>FAQ:</h2>
 
