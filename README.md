@@ -4,7 +4,7 @@ A menu which players can enable Glow to themselves.
 The colors that appear on the menu can be changed in a config file;
 The glow can be restricted to a certain flag, also has different styles;
 
-<h2>ConVars</h2>:
+<h2>ConVars:</h2>
 
 - <b>sm_glowmenu_style</b> (<b>1</b> by Default) - It changes the Glow Style to the players (Min 0, Max 3). WARNING: If you set the style to 0, <b>all players can see the glow through Walls</b>;
 - <b>sm_glowmenu_prefix</b> (<b>[Glow Menu]</b> by Default) - Chat's Prefix;
@@ -25,6 +25,7 @@ The glow can be restricted to a certain flag, also has different styles;
 ```
 
 <h2>Installation:</h2>
+<<<<<<< HEAD
 
 1. Setup your MySQL database first (read above)
 2. Drag the file named <i>glow_menu.ini</i> to <b>addons/sourcemod/configs</b>.
@@ -38,6 +39,22 @@ The glow can be restricted to a certain flag, also has different styles;
 - [Sourcemod](https://www.sourcemod.net/);
 - [ColorVariables](https://forums.alliedmods.net/showthread.php?t=267743) (To Compile);
 - <b>sv_force_transmit_players</b> ConVar to <b>1</b>(To show the Glow to everyone); 
+=======
+<ol>
+<li>Drag the file named <i>colors.cfg</i> to <b>addons/sourcemod/configs/glow_colors</b>.</li>
+<li>Drag the file named <i>csgo_glow_menu.smx</i> to <b>addons/sourcemod/plugins</b>.</li>
+<li>Drag the file named <i>csgo_glowcolor_menu.phrases.txt</i> to <b>addons/sourcemod/translations</b>.</li>
+<li>Drag the file named <i>csgo_glowcolor_menu.cfg</i> to <b>cfg/sourcemod</b>.</li>
+<li>Load the plugin or just wait for the next map.</li>
+<li>Change the ConVars as you wish in the file <i>csgo_glowcolor_menu.cfg</i> located in <b>cfg/sourcemod</b></li>
+</ol>
+
+<h2>Requirements:</h2>
+<ul>
+<li>(To Show the Glow to everyone): Set your server with the <b>sv_force_transmit_players</b> ConVar to <b>1</b></li>
+<li>(To Compile): ColorVariables - https://github.com/PremyslTalich/ColorVariables</li>
+</ul>
+>>>>>>> 04521ecda64385369e2c6c55fe6aee2dc68e71af
 
 <h2>FAQ:</h2>
 
@@ -58,4 +75,3 @@ My Steam Profile if you have any questions -> http://steamcommunity.com/id/Hallu
 
 My Website -> http://hallucinogenictrollconfigs.com
 
-Alliedmodders Thread, related with this plugin -> https://forums.alliedmods.net/showthread.php?t=295236

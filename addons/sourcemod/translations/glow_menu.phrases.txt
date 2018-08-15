@@ -4,6 +4,7 @@
 	{
 		"en"			"You don't have any permission to use this command!"
 		"pt_p"			"Lamento, mas não tens permissões para usar este comando!"
+		"fr"			"Vous n'avez pas la permission d'utiliser cette commande!"
 	}
 	"DisabledGlow"
 	{
@@ -24,11 +25,13 @@
 	{
 		"en"			"An error has ocurred!"
 		"pt_p"			"Ocorreu um erro!"
+		"fr"			"Une erreur est survenue!"
 	}
 	"ChangedGlowColor"
 	{
 		"#format"		"{1:s}"
 		"en"			"You have changed your {purple}Glow Color{default} to: {blue}{1}{default}!"
 		"pt_p"			"Mudaste a {purple}Cor da tua Aura{default} para: {blue}{1}{default}!"
+		"fr"			"Vous avez changé votre {purple}Couleur de contour{default} en: {blue}{1}{default}!"
 	}
 }
